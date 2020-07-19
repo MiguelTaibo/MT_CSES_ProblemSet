@@ -28,3 +28,6 @@ Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find th
 1. Distinct Numbers (Python)
 2. Apartments (Python)
 3. Ferris Wheel (C++)
+4. Concert Tickets (C++)
+5. Restaurant Customers (C++)
+6. Movie Festival (in progress)
