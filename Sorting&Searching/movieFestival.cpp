@@ -50,31 +50,13 @@ void printArray(int arr[], int size)
     std::cout << std::endl;
 }
 
-bool checkSort(int arr[], int len) {
+bool checkSort(int arr[], int len)
+{
   for (int i = 1; i<len;i++) {
     if (arr[i-1]>arr[i])
       return true;
   }
   return false;
-
-}
-
-void nextStep(int a[], int l[], int i, int n, int prevTime,int count, int &respuesta)
-{
-  if(count>respuesta)
-    respuesta=count;
-  if (i==n)
-    return;
-
-  if (a[i]<prevTime) {
-    nextStep(a,l,i+1,n,prevTime,count,respuesta);
-  } else if (i==n-1 || l[i]<a[i+1]) {
-    nextStep(a,l,i+1,n,l[i],count+1,respuesta);
-  } else {
-    nextStep(a,l,i+1,n,l[i],count+1,respuesta);
-    nextStep(a,l,i+1,n,prevTime,count,respuesta);
-  }
-
 
 }
 
@@ -84,45 +66,27 @@ int main()
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
-  char input[10];
   int n;
 
-  std::cin >> input;
-  sscanf(input, "%d", &n);
+  cin >> n;
+
 
   int a[n];
   int l[n];
   for (int i = 0; i<n; i++) {
-      std::cin >> input;
-      sscanf(input,"%d",&a[i]);
-      std::cin >> input;
-      sscanf(input,"%d",&l[i]);
+      cin >> a[i] >> l[i];
   }
 
-  if (checkSort(a,n))
-    duoSort(a,l,0,n-1);
+  if (checkSort(l,n))
+    duoSort(l,a,0,n-1);
 
-  //printArray(a,n );
-  //printArray(l,n );
-  #define split 10000
-  if (n>split) {
-    int slice = 0;
-    int indexes[split];
-    for (int i = 0; i<n-1;i++) {
-      if(l[i]<=a[i+1]) {
-        indexes[slice++]=i;
-      }
+  int ans=0,last=0;
+  for (int i=0;i<n;++i) {
+    if (a[i]>=last) {
+      ++ans;
+      last=l[i];
     }
-    int respuesta = 0;
-    int i;
-    for (i = 0; i<slice;i++) {
-      nextStep(a,l,0, indexes[i],0,respuesta,respuesta);
-    }
-    nextStep(a,l,indexes[i],n ,0,respuesta,respuesta);
-  } else {
-    int respuesta = 0;
-    nextStep(a,l,0,n,0,0,respuesta);
+  }
+  cout << ans;
 
-    std::cout<<respuesta<<std::endl;
-  }
-  }
+}
