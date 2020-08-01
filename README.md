@@ -1,6 +1,6 @@
 # MT_CSES_ProblemSet
 
-Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 27/07/2020 I've solved 26 task being user 1991 out of 191979 in the leaderboard.
+Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 02/08/2020 I've solved 33 task being user 1657 out of 206314 in the leaderboard.
 
 ## Solved Tasks
 
@@ -35,3 +35,19 @@ Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find th
 8. Maximum Subarray Sum (C++)
 9. Stick Lengths (C++)
 10. Playlist (C++)
+
+### Dynamic Programming
+
+1. Dice Combinations (C++)
+2. Minimizing Coins (C++)
+3. Coin Combination I (C++)
+5. Removing Digits (C++)
+6. Grid Paths (C++)
+
+### Graph Algorithms
+
+1. Counting Rooms (C++)
+
+### Mathematics
+
+1. Exponentiation (C++)
