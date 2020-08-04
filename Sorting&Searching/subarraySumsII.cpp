@@ -18,6 +18,20 @@ void solve(int l, int r, int x) {
   }
 }
 
+void checkArround(int r, int l) {
+  ll sumR=0,sumL=0;
+  if (r>0 && a[r-1]==0) solution++;
+  if (l<n-1 && a[l+1]==0) solution++;
+  for (int i = r-1; i>=0;i--) {
+    sumR+=a[i];
+    for (int j = l+1;j<n;j++) {
+      sumL+=a[j];
+      if (sumR+sumL==0) solution++;
+    }
+  }
+}
+
+
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
@@ -35,8 +49,9 @@ int main() {
   while (l<=n) {
     if (sum==x) {
       solution++;
+      //cout << r SPACE l <<endl;
+      checkArround(r,l);
       sum-=a[r++];
-      //cout << r SPACE l << endl;
     }
     else if (sum<x) sum+=a[l++];
     else if (sum>x) sum-=a[r++];

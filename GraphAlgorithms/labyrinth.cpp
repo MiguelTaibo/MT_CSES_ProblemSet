@@ -1,189 +1,154 @@
 #include <bits/stdc++.h>
-#include <list>
+
 using namespace std;
 
-const int mnx = 1e4;
-const int pathlen = 5e5;
-int n,m,x,y;
-int grid[mnx][mnx];
-const char ps[4] = {'U','D','L','R'};
+#define FOR(n) for (int i=0; i<n;i++)
+#define FOR2(n) for (int j=0; j<n;j++)
+#define SPACE << " " <<
+#define F << endl
 
-struct Nodo {
-  int x;
-  int y;
-  int len;
-  list<char> move;
-  Nodo* parent;
-} ;
+typedef long long ll;
+const int mxn = 1e4;
+const int Mxn = 1e8;
+int N,m, grid[mxn][mxn];
+array<int,2> paths[Mxn];
+char L[4] = {'D','U','R','L'};
 
-void printGrid(int grid[][mnx], int n, int m)
-{
+int ind;
 
-  for (int i = 0; i<n;i++) {
-      for (int j = 0; j<m ;j++) {
-        cout << grid[i][j];
-      }
-      cout << endl;
-  }
+struct Nodo { int x, y, len, m, idx; };
+Nodo newNodo(int x, int y, int len, int m, int past) {
+    Nodo n;
+    n.x = x;
+    n.y = y;
+    n.len = len;
+    n.m = m;
+    ind++;
+    n.idx = ind;
+    paths[n.idx][0]=m;
+    paths[n.idx][1]=past;
+    return n;
 }
 
-void error() {
-  cout << "error" <<endl;
-}
+Nodo A,B;
 
-void assingArray(char a[], char b[], int len)
-{
-  for (int i = 0; i<len;i++) {
-    a[i]=b[i];
-  }
-}
+/*
+10
+10
+......A...
+..........
+B.........
+..........
+..........
+..........
+..........
+..........
+..........
+..........
 
-void BFS(Nodo s, Nodo &res)
-{
-    // Create a queue for BFS
-    list<Nodo> queue;
+*/
 
-    // Mark the current node as visited and enqueue it
-    grid[s.x][s.y]=0;
-    queue.push_back(s);
 
-    while(!queue.empty())
-    {
-        // Dequeue a vertex from queue and print it
-        s = queue.front();
-        queue.pop_front();
-        x = s.x; y = s.y;
+bool tryFast() {
+  int xM, yM, xD=A.x-B.x, yD=A.y-B.y;
 
-        if (x>0 && grid[x-1][y]>=1) {
+  if (xD<0) xM=1;
+  else xM = -1;
+  if (yD<0) yM=1;
+  else yM = -1;
 
-          Nodo node;
-          node.parent = &s;
-          node.len = s.len+1;
-          node.x= s.x-1;
-          node.y = s.y;
-          node.move = s.move;
-          node.move.push_back(ps[0]);
-          //assingArray(node.move,s.move,s.len);
-          //node.move[node.len-1] = ps[0];
+  int len = 0;
+  char res[mxn];
 
-          if (grid[node.x][node.y]==2) {
-            res = node;
-            //cout << "bien";
-            break;
-          }
-          grid[node.x][node.y]=0;
-          queue.push_back(node);
-        }
-        if (x+1<n && grid[x+1][y]>=1) {
-
-          Nodo node;
-          node.parent = &s;
-          node.len = s.len+1;
-          node.x= s.x+1;
-          node.y = s.y;
-          node.move = s.move;
-          node.move.push_back(ps[1]);
-          //assingArray(node.move,s.move,s.len);
-          //node.move[node.len-1] = ps[1];
-
-          if (grid[node.x][node.y]==2) {
-            res = node;
-            ////cout << "bien";
-            break;
-          }
-          grid[node.x][node.y]=0;
-          queue.push_back(node);
-        }
-        if (y>0 && grid[x][y-1]>=1) {
-
-          Nodo node;
-          node.parent = &s;
-          node.len = s.len+1;
-          node.x= s.x;
-          node.y = s.y-1;
-          node.move = s.move;
-          node.move.push_back(ps[2]);
-          //assingArray(node.move,s.move,s.len);
-          //node.move[node.len-1] = ps[2];
-
-          if (grid[node.x][node.y]==2) {
-            res = node;
-            //cout << "bien";
-            break;
-          }
-          grid[node.x][node.y]=0;
-          queue.push_back(node);
-        }
-        if (y+1<m && grid[x][y+1]>=1) {
-
-          Nodo node;
-          node.parent = &s;
-          node.len = s.len+1;
-          node.x= s.x;
-          node.y = s.y+1;
-          node.move = s.move;
-          node.move.push_back(ps[3]);
-          //assingArray(node.move,s.move,s.len);
-          //node.move[node.len-1] = ps[3];
-
-          if (grid[node.x][node.y]==2) {
-            res = node;
-            //cout << "bien";
-            break;
-          }
-          grid[node.x][node.y]=0;
-          queue.push_back(node);
-        }
-
+  for (int i = A.x; i!=A.x-xD;i+=xM) {
+    if (grid[i][A.y]) {
+      res[len++]=L[(int)(1-xM)/2];
     }
+    else return true;
+  }
+
+  for (int j = A.y;j!=A.y-yD;j+=yM) {
+    if (grid[B.y][j]) {
+      res[len++]=L[(int)(5-yM)/2];
+    }
+    else return true;
+  }
+  cout << "YES" F;
+  cout << len F;
+  FOR(len)
+    cout << res[i];
+  cout F;
+  return false;
 }
 
-int main()
-{
 
-  cin >> n >> m;
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 
-  char input[m];
-
-  for (int i= 0; i<n;i++) {
-    cin >> input;
-    for (int j = 0; j<m; j++) {
-      if (input[j]=='#')
-        grid[i][j]=0;
-      else if (input[j]=='.')
-        grid[i][j]=1;
-      else if (input[j]=='A') {
-          grid[i][j]=-1;
-          x = i; y = j;
+  cin >> N >> m;
+  char temp;
+  FOR(N) {
+    FOR2(m) {
+      cin >> temp;
+      if (temp=='#') grid[i][j]=false;
+      else grid[i][j]=true;
+      if (temp=='A') {
+        A.x=i; A.y=j; A.len=0;
       }
-      else if (input[j]=='B')
-        grid[i][j]=2;
+      else if (temp=='B') {
+        B.x=i; B.y=j;
+      }
     }
   }
 
-  Nodo node;
-  node.parent = NULL;
-  node.x = x;
-  node.y = y;
-  node.len = 0;
+  //FOR(n) { FOR2(m) cout << grid[i][j];  cout F; }
 
-  Nodo solution= node;
-  BFS(node, solution);
-  //cout << "jkskdf" << endl;
+  if (tryFast()) {
+    bool found = false;
+    Nodo n;
+    queue<Nodo> q;
+    q.push(A);
 
-  if (solution.len>0) {
-    cout << "YES" << endl;
-    int len = solution.len;
-    cout << solution.len << endl;
-    for_each(solution.move.begin(), solution.move.end(), [](char a)
-{
-    std::cout<<a;
-});
-    cout <<endl;
+    while (!q.empty()) {
+      n = q.front();
+      q.pop();
+
+      if (n.x==B.x && n.y==B.y) { found = true; break; }
+      if (n.x<N-1 && grid[n.x+1][n.y]) {
+        grid[n.x+1][n.y]=false;
+        q.push(newNodo(n.x+1,n.y,n.len+1,0,n.idx));
+      }
+      if (n.x>0 && grid[n.x-1][n.y]) {
+        grid[n.x-1][n.y]=false;
+        q.push(newNodo(n.x-1,n.y,n.len+1,1,n.idx));
+      }
+      if (n.y<m-1 && grid[n.x][n.y+1]) {
+        grid[n.x][n.y+1]=false;
+        q.push(newNodo(n.x,n.y+1,n.len+1,2,n.idx));
+      }
+      if (n.y> 0 && grid[n.x][n.y-1]) {
+        grid[n.x][n.y-1]=1;
+        q.push(newNodo(n.x,n.y-1,n.len+1,3,n.idx));
+      }
+    }
+
+    if (found) {
+      cout << "YES" << endl;
+      cout << n.len F;
+      int temp = n.idx;
+      char res[n.len];
+      for (int i = 0; i<n.len;i++) {
+        res[i] = L[paths[temp][0]];
+        temp = paths[temp][1];
+      }
+      for (int i = n.len-1;i>=0;i--){
+        cout << res[i];
+      } cout F;
+    }
+    else {
+      cout << "NO" F;
+    }
   }
-  else {
-    cout << "NO" << endl;
-  }
-
 
 }

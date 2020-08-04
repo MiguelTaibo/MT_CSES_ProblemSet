@@ -3,7 +3,9 @@
 using namespace std;
 
 #define FOR(n) for (int i=0; i<n;i++)
-#define SPACE >> " " >>
+#define FOR2(n) for (int j=0; j<n;j++)
+#define SPACE << " " <<
+#define F << endl
 
 typedef long long ll;
 const int mxn = 1e5;

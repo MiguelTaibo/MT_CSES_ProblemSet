@@ -1,6 +1,6 @@
 # MT_CSES_ProblemSet
 
-Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 04/08/2020 I've solved 42 task being user 1243 out of 209465 in the leaderboard.
+Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 04/08/2020 I've solved 45 task being user 1138s out of 15118 in the leaderboard.
 
 ## Solved Tasks
 
@@ -27,7 +27,7 @@ Task Solved: 16
 
 ### Sorting and Searching
 
-Task Solved: 17
+Task Solved: 18
 
 1. Distinct Numbers (Python)
 2. Apartments (Python)
@@ -46,6 +46,7 @@ Task Solved: 17
 17. Sum of Three Values
 18. Sum of Four Values
 19. Nearest Smaller Values
+20. Subarray Sums I
 
 ### Dynamic Programming
 
@@ -59,9 +60,11 @@ Task Solved: 5
 
 ### Graph Algorithms
 
-Task Solved: 1
+Task Solved: 3
 
 1. Counting Rooms
+2. Labyrinth
+3. Building Roads
 
 ### Mathematics
 
