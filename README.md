@@ -1,10 +1,12 @@
 # MT_CSES_ProblemSet
 
-Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 02/08/2020 I've solved 33 task being user 1657 out of 206314 in the leaderboard.
+Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 04/08/2020 I've solved 42 task being user 1243 out of 209465 in the leaderboard.
 
 ## Solved Tasks
 
 ### Introductory Problems
+
+Task Solved: 16
 
 1. Weird Algorithm (Python)
 2. Missing Number (Python)
@@ -21,33 +23,50 @@ Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find th
 13. Creating Strings I (Python)
 14. Apple Division (Python)
 15. Chessboard and Queens (Python)
-16. Grid Paths (C++)
+16. Grid Paths
 
 ### Sorting and Searching
 
+Task Solved: 17
+
 1. Distinct Numbers (Python)
 2. Apartments (Python)
-3. Ferris Wheel (C++)
-4. Concert Tickets (C++)
-5. Restaurant Customers (C++)
-6. Movie Festival (C++)
-7. Sum Of Two Values (C++)
-8. Maximum Subarray Sum (C++)
-9. Stick Lengths (C++)
-10. Playlist (C++)
+3. Ferris Wheel
+4. Concert Tickets
+5. Restaurant Customers
+6. Movie Festival
+7. Sum Of Two Values
+8. Maximum Subarray Sum
+9. Stick Lengths
+10. Playlist
+11. Towers
+14. Factory Machines
+15. Task and Deadlines
+16. Reading Books
+17. Sum of Three Values
+18. Sum of Four Values
+19. Nearest Smaller Values
 
 ### Dynamic Programming
 
-1. Dice Combinations (C++)
-2. Minimizing Coins (C++)
-3. Coin Combination I (C++)
-5. Removing Digits (C++)
-6. Grid Paths (C++)
+Task Solved: 5
+
+1. Dice Combinations
+2. Minimizing Coins
+3. Coin Combination I
+5. Removing Digits
+6. Grid Paths
 
 ### Graph Algorithms
 
-1. Counting Rooms (C++)
+Task Solved: 1
+
+1. Counting Rooms
 
 ### Mathematics
 
-1. Exponentiation (C++)
+Task Solved: 3
+
+1. Exponentiation
+3. Counting Divisors
+4. Common Divisors
