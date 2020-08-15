@@ -1,12 +1,12 @@
 # MT_CSES_ProblemSet
 
-Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 04/08/2020 I've solved 45 task being user 1138s out of 15118 in the leaderboard.
+Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 15/08/2020 I've solved 56 task being user 891	out of 16004 in the leaderboard.
 
 ## Solved Tasks
 
 ### Introductory Problems
 
-Task Solved: 16
+Task Solved: 16 (All)
 
 1. Weird Algorithm (Python)
 2. Missing Number (Python)
@@ -60,11 +60,28 @@ Task Solved: 5
 
 ### Graph Algorithms
 
-Task Solved: 3
+Task Solved: 8
 
 1. Counting Rooms
 2. Labyrinth
 3. Building Roads
+4. Message Route
+5. Building Teams
+6. Round Trip
+7. Monsters
+8. Shortest Routes I
+
+### Range Queries
+
+Task Solved: 6
+
+1. Range Sum Queries I
+2. Range Minimum Queries I
+3. Range Sum Queries II
+4. Range Minimum Queries II
+5. Range Xor Queries
+6. Range Update Queries
+
 
 ### Mathematics
 

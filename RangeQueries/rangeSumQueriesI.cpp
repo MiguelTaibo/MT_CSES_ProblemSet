@@ -9,13 +9,25 @@ using namespace std;
 #define F << endl
 
 typedef long long ll;
-const int mxn = 1e5;
+const int mxn = 1e7;
 const int MXN = 4e5;
-int n,q, a[mxn];
+ll q,n, x, s[mxn];
 
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
+
+  cin >> n >> q;
+  for (int i = 0; i<n;i++) {
+    cin >> x;
+    s[i+1]=s[i]+x;
+  }
+
+  int a,b;
+  for (int k = 0; k<q;k++) {
+    cin >> a >> b;
+    cout << s[b]-s[a-1] F;
+  }
 
 
 }
