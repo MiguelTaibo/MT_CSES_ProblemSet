@@ -1,6 +1,6 @@
 # MT_CSES_ProblemSet
 
-Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 15/08/2020 I've solved 56 task being user 891	out of 16004 in the leaderboard.
+Miguel Taibo solutions to CSES Problem Set using Python and C++. You can find the dataset at https://cses.fi/problemset/. At 23/08/2020 I've solved 68 task being user 674	out of 16731 in the leaderboard.
 
 ## Solved Tasks
 
@@ -60,7 +60,7 @@ Task Solved: 5
 
 ### Graph Algorithms
 
-Task Solved: 8
+Task Solved: 17
 
 1. Counting Rooms
 2. Labyrinth
@@ -70,10 +70,19 @@ Task Solved: 8
 6. Round Trip
 7. Monsters
 8. Shortest Routes I
+9. Shortest Routes II
+10. High Score
+11. Flight Discount
+12. Cycle Finding
+14. Round Trip II
+15. Course Schedule
+16. Longest Flight Route
+17. Game Routes
+18. Investigation
 
 ### Range Queries
 
-Task Solved: 6
+Task Solved: 9
 
 1. Range Sum Queries I
 2. Range Minimum Queries I
@@ -81,6 +90,9 @@ Task Solved: 6
 4. Range Minimum Queries II
 5. Range Xor Queries
 6. Range Update Queries
+7. Forest Queries
+8. Hotel Queries
+9. List Removals
 
 
 ### Mathematics

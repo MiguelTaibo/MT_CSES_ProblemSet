@@ -31,8 +31,6 @@ int main() {
   }
 
   inicio = 0;
-  //cout F;
-  //cout << v << " " << pow(2,v) F;
   for (int k = v; k>=0; k--) {
     ant = pow(2,k);
     inicio+=pow(2,k);
@@ -53,7 +51,6 @@ int main() {
 
   int a,b, offset, control;
   ll res,potencia;
-  set<int> s;
   for (int k = 0; k<q;k++) {
     cin >> control >> a >> b;
     a--;
